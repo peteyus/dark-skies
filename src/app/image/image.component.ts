@@ -5,11 +5,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxBootstrapSliderModule } from 'ngx-bootstrap-slider';
 
 @Component({
-  selector: 'app-image',
-  standalone: true,
-  imports: [NgbModule, FormsModule, NgxBootstrapSliderModule, NgOptimizedImage],
-  templateUrl: './image.component.html',
-  styleUrl: './image.component.scss'
+    selector: 'app-image',
+    imports: [NgbModule, FormsModule, NgxBootstrapSliderModule, NgOptimizedImage],
+    templateUrl: './image.component.html',
+    styleUrl: './image.component.scss'
 })
 export class ImageComponent {
   bortles = [

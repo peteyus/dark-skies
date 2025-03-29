@@ -6,11 +6,10 @@ interface Constellation {
   value: string; label: string; description: string;
 }
 @Component({
-  selector: 'app-stars',
-  standalone: true,
-  imports: [ImageComponent, FormsModule],
-  templateUrl: './stars.component.html',
-  styleUrl: './stars.component.scss'
+    selector: 'app-stars',
+    imports: [ImageComponent, FormsModule],
+    templateUrl: './stars.component.html',
+    styleUrl: './stars.component.scss'
 })
 export class StarsComponent {
   selectedConstellation: string = 'orion';
