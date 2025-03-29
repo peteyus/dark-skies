@@ -1,12 +1,14 @@
 import { NgOptimizedImage } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { NgxBootstrapSliderModule } from 'ngx-bootstrap-slider';
+import { MatRadioModule } from '@angular/material/radio'
+import {MatSliderModule} from '@angular/material/slider';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+
 
 @Component({
     selector: 'app-image',
-    imports: [NgbModule, FormsModule, NgxBootstrapSliderModule, NgOptimizedImage],
+    imports: [FormsModule, NgOptimizedImage, MatRadioModule, MatSliderModule, MatSlideToggleModule],
     templateUrl: './image.component.html',
     styleUrl: './image.component.scss'
 })
@@ -32,14 +34,5 @@ export class ImageComponent {
   
   constructor() {
     this.selectedValue = 0;
-  }
-
-  // todo prj - keydown isn't working? worth finding another way to make it work?
-  slide(positive: boolean) {
-    console.log(`keypress, ${positive ? 'right' : 'left'}`);
-    if (positive && this.selectedValue < 9)
-      this.selectedValue++;
-    else if (!positive && this.selectedValue > 0)
-      this.selectedValue--;
   }
 }

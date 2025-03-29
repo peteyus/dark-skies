@@ -1,24 +1,18 @@
 <div>
-    <img [ngSrc]="'assets/' + constellation + '-b' + selectedValue + (showLines ? '-lines' : '') + '.jpg'" width="590"
-        height="705">
+    <img priority [ngSrc]="'assets/' + constellation + '-b' + selectedValue + (showLines ? '-lines' : '') + '.jpg'"
+        width="590" height="705">
 </div>
 <div>
-    <div class="form check form-switch">
-        <input type="checkbox" role="switch" [(ngModel)]="showLines" id="showLines">
-        <label for="showLines">Show lines?</label>
-    </div>
-    <ul>
+    <mat-slide-toggle [(ngModel)]="showLines" name="showLines">Show Constellation Lines</mat-slide-toggle>
+    <mat-radio-group [(ngModel)]="selectedValue">
         @for (b of bortles; track b) {
-        <li>
-            <label [ngbTooltip]="b.description">
-                <input class="form-check-input" type="radio" name="bortles" [id]="'bortles' + b.class" [value]="b.class"
-                    [(ngModel)]="selectedValue" />{{ b.name }}
-            </label>
-        </li>
+        <mat-radio-button [name]="b.name" [value]="b.class">{{ b.name }}
+        </mat-radio-button>
         }
-        <mv-slider [(value)]="selectedValue" [min]="0" [max]="9" (keydown.arrowright)="slide(true)"
-            (keydown.arrowleft)="slide(false)"></mv-slider>
-    </ul>
+    </mat-radio-group>
+    <mat-slider min="0" max="9" step="1">
+        <input matSliderThumb [(ngModel)]="selectedValue" name="slider">
+    </mat-slider>
     <div>
         <p>{{description}}</p>
     </div>

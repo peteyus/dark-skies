@@ -1,15 +1,16 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { ActivatedRoute, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { Component, OnInit } from '@angular/core';
+import { NavigationEnd, Router, RouterLink, RouterOutlet } from '@angular/router';
+import { MatTabsModule } from '@angular/material/tabs';
+import { Subscription } from 'rxjs';
 
 @Component({
-    selector: 'app-root',
-    imports: [RouterOutlet, RouterLink, RouterLinkActive, NgbModule, CommonModule],
-    templateUrl: './app.component.html',
-    styleUrl: './app.component.scss'
+  selector: 'app-root',
+  imports: [CommonModule, MatTabsModule, RouterOutlet, RouterLink],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.scss'
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'dark-skies';
   links = [
     { title: 'Home', fragment: '' },
@@ -17,5 +18,19 @@ export class AppComponent {
     { title: 'Sources', fragment: 'sources' }
   ]
 
-  constructor(readonly route: ActivatedRoute) {}
+  activeLink = this.links[0];
+  routerSub: Subscription | null = null;
+
+  constructor(private readonly router: Router) { }
+
+  ngOnInit(): void {
+    this.routerSub = this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        const path = event.url.replace('/', '');
+        let link = this.links.find(l => l.fragment == path)
+        if (link) this.activeLink = link;
+        this.routerSub?.unsubscribe();
+      }
+    })
+  }
 }
