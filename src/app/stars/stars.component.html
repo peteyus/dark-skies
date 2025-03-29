@@ -1,0 +1,9 @@
+<p>stars works!</p>
+<p>see some stars</p>
+<select class="form-select" aria-label="Select a constellation" [(ngModel)]="selectedConstellation"
+    (change)="selectionChanged()">
+    @for (constellation of constellations; track constellation) {
+    <option [value]="constellation.value">{{constellation.label}}</option>
+    }
+</select>
+<app-image [constellation]="selectedConstellation" [description]="selectedDescription">
