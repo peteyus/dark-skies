@@ -1,19 +1,8 @@
 <div>
     <img priority [ngSrc]="'assets/' + constellation + '-b' + selectedValue + (showLines ? '-lines' : '') + '.jpg'"
-        width="590" height="705">
+        width="245" height="352">
 </div>
 <div>
     <mat-slide-toggle [(ngModel)]="showLines" name="showLines">Show Constellation Lines</mat-slide-toggle>
-    <mat-radio-group [(ngModel)]="selectedValue">
-        @for (b of bortles; track b) {
-        <mat-radio-button [name]="b.name" [value]="b.class">{{ b.name }}
-        </mat-radio-button>
-        }
-    </mat-radio-group>
-    <mat-slider min="0" max="9" step="1">
-        <input matSliderThumb [(ngModel)]="selectedValue" name="slider">
-    </mat-slider>
-    <div>
-        <p>{{description}}</p>
-    </div>
+    <app-bortle (bortleChanged)="bortleChanged($event)"></app-bortle>
 </div>

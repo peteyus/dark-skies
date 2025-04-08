@@ -1,0 +1,11 @@
+:host {
+    .flex {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        select {
+            height: fit-content;
+        }
+    }
+}

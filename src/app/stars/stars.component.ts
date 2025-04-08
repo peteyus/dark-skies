@@ -16,7 +16,7 @@ export class StarsComponent {
   selectedDescription: string = '';
 
   readonly constellations: Constellation[] = [
-    { value: 'orion', label: 'Orion', description: 'Orion was a hunter in Greek mythology who calimed to be able to outsmart Gaia and was punished for his pride by being trapped in the sky.' },
+    { value: 'orion', label: 'Orion', description: 'Orion was a hunter in Greek mythology who did stuff and things and after he did other stuff and things the gods were like "wow, this bro should go in the sky."' },
     { value: 'bigdipper', label: 'Big Dipper (Ursa Major)', description: 'The Great Bear is honored in many traditions. In many Native American stories, the bear is pursued by four hunters at its tail, and their chase follows its rotation around the North pole throughout the year.' },
   ]
 
