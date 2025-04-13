@@ -13,8 +13,8 @@ import { Subscription } from 'rxjs';
 export class AppComponent implements OnInit {
   title = 'dark-skies';
   links = [
-    { title: 'Home', fragment: '' },
     { title: 'Stars', fragment: 'stars' },
+    { title: 'Information', fragment: 'info' },
     { title: 'Sources', fragment: 'sources' }
   ]
 

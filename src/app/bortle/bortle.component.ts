@@ -2,6 +2,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSliderModule } from '@angular/material/slider';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 export interface Bortle {
   class: number;
@@ -11,7 +12,7 @@ export interface Bortle {
 
 @Component({
   selector: 'app-bortle',
-  imports: [MatSliderModule, MatRadioModule, FormsModule],
+  imports: [MatSliderModule, MatRadioModule, FormsModule, MatTooltipModule],
   templateUrl: './bortle.component.html',
   styleUrl: './bortle.component.scss'
 })
@@ -44,4 +45,6 @@ export class BortleComponent {
     this.bortleChanged.emit(this.selectedValue);
     this.bortle = this.bortles[this.selectedValue]
   }
+
+  formatLabel: string = `Bortle class ${this.selectedValue}`;  
 }
