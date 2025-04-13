@@ -1,12 +1,11 @@
 <div class="flex">
-    <select class="form-select" aria-label="Select a constellation" [(ngModel)]="selectedConstellation"
-        (change)="selectionChanged()">
+    <label for="constellation">Select a constellation:</label>
+    <select class="form-select" id="constellation" aria-label="Select a constellation"
+        [(ngModel)]="selectedConstellation" (change)="selectionChanged()">
         @for (constellation of constellations; track constellation) {
         <option [value]="constellation.value">{{constellation.label}}</option>
         }
     </select>
-    <div>
-        <p>{{selectedDescription}}</p>
-    </div>
+    <mat-icon aria-label="Information" [matTooltip]="selectedDescription">info</mat-icon>
 </div>
 <app-image [constellation]="selectedConstellation" [description]="selectedDescription">

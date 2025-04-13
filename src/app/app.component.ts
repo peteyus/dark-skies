@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router, RouterLink, RouterOutlet } from '@angular/router';
 import { MatTabsModule } from '@angular/material/tabs';
 import { Subscription } from 'rxjs';
+import { MatIconRegistry } from '@angular/material/icon';
 
 @Component({
   selector: 'app-root',
@@ -21,9 +22,10 @@ export class AppComponent implements OnInit {
   activeLink = this.links[0];
   routerSub: Subscription | null = null;
 
-  constructor(private readonly router: Router) { }
+  constructor(private readonly router: Router, private readonly iconRegistry: MatIconRegistry) { }
 
   ngOnInit(): void {
+    this.iconRegistry.setDefaultFontSetClass('material-symbols-outlined')
     this.routerSub = this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         const path = event.url.replace('/', '');

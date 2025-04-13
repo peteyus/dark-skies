@@ -1,11 +1,11 @@
 :host {
     .flex {
         display: flex;
+        flex-direction: row;
         align-items: center;
         gap: 10px;
-
-        select {
-            height: fit-content;
-        }
+    }
+    app-image {
+        padding-top: 10px;
     }
 }

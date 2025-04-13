@@ -1,15 +1,17 @@
 import { Component } from '@angular/core';
 import { ImageComponent } from '../image/image.component';
 import { FormsModule } from '@angular/forms';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 interface Constellation {
   value: string; label: string; description: string;
 }
 @Component({
-    selector: 'app-stars',
-    imports: [ImageComponent, FormsModule],
-    templateUrl: './stars.component.html',
-    styleUrl: './stars.component.scss'
+  selector: 'app-stars',
+  imports: [ImageComponent, FormsModule, MatIconModule, MatTooltipModule],
+  templateUrl: './stars.component.html',
+  styleUrl: './stars.component.scss'
 })
 export class StarsComponent {
   selectedConstellation: string = 'orion';
