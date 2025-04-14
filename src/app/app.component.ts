@@ -16,7 +16,6 @@ export class AppComponent implements OnInit {
   links = [
     { title: 'Stars', fragment: 'stars' },
     { title: 'Information', fragment: 'info' },
-    { title: 'Sources', fragment: 'sources' }
   ]
 
   activeLink = this.links[0];
