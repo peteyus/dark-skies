@@ -1,8 +1,16 @@
-<div>
+<div class="mobile">
+    <mat-slide-toggle [(ngModel)]="showLines" name="showLines">Show Constellation
+        Lines</mat-slide-toggle>
     <img priority [ngSrc]="'assets/' + constellation + '-b' + selectedValue + (showLines ? '-lines' : '') + '.jpg'"
         width="245" height="352">
-</div>
-<div>
-    <mat-slide-toggle [(ngModel)]="showLines" name="showLines">Show Constellation Lines</mat-slide-toggle>
     <app-bortle (bortleChanged)="bortleChanged($event)"></app-bortle>
+</div>
+
+<div class="desktop">
+    <img priority [ngSrc]="'assets/' + constellation + '-b' + selectedValue + (showLines ? '-lines' : '') + '.jpg'"
+        width="245" height="352">
+    <div>
+        <mat-slide-toggle [(ngModel)]="showLines" name="showLines">Show Constellation Lines</mat-slide-toggle>
+        <app-bortle (bortleChanged)="bortleChanged($event)"></app-bortle>
+    </div>
 </div>

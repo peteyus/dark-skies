@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatRadioModule } from '@angular/material/radio';
@@ -12,7 +13,7 @@ export interface Bortle {
 
 @Component({
   selector: 'app-bortle',
-  imports: [MatSliderModule, MatRadioModule, FormsModule, MatTooltipModule],
+  imports: [MatSliderModule, MatRadioModule, FormsModule, MatTooltipModule, CommonModule],
   templateUrl: './bortle.component.html',
   styleUrl: './bortle.component.scss'
 })

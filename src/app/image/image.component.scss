@@ -1,4 +1,24 @@
 :host {
-    display: flex;
-    gap: 10px;
+    padding-top: 10px;
+
+    .mobile,
+    .desktop {
+        display: none
+    }
+
+    @media screen and (max-width: 899px) {
+        div.mobile {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: space-around;
+        }
+    }
+    
+    @media screen and (min-width: 900px) {
+        div.desktop {
+            display: flex;
+            gap: 10px;
+        }
+    }
 }
