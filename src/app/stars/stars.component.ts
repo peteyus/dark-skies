@@ -18,7 +18,7 @@ export class StarsComponent {
   selectedDescription: string = '';
 
   readonly constellations: Constellation[] = [
-    { value: 'orion', label: 'Orion', description: 'Orion was a hunter in Greek mythology who did stuff and things and after he did other stuff and things the gods were like "wow, this bro should go in the sky."' },
+    { value: 'orion', label: 'Orion', description: 'Orion was a hunter in Greek mythology whose story has many forms. In most, he was a very skilled hunter whose pride led Gaia to send a giant scorpion to kill him. To commemorate this, the gods placed Orion and Scorpio in the skies.' },
     { value: 'bigdipper', label: 'Big Dipper (Ursa Major)', description: 'The Great Bear is honored in many traditions. In many Native American stories, the bear is pursued by four hunters at its tail, and their chase follows its rotation around the North pole throughout the year.' },
   ]
 

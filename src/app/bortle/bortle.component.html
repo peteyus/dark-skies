@@ -1,17 +1,18 @@
-<div>
+<div class="desktop">
     <p class="info-small">By adjusting the slider below, you can view your selected stars at different Bortle ratings. The Bortle scale is
         represented by classes 1-9, where 1 is true darkness inside the atmosphere and 9 represents the brightness of a
         big city sky.</p>
 </div>
-<div>
+<div class="full-width slider">
     <mat-radio-group [(ngModel)]="selectedValue" *ngIf="false">
         @for (b of bortlesArray; track b) {
         <mat-radio-button [name]="b.name" [value]="b.class">{{ b.name }}
         </mat-radio-button>
         }
     </mat-radio-group>
-    <mat-slider min="0" max="9" step="1" discrete [matTooltip]="formatLabel">
+    <mat-slider min="0" max="9" step="1" discrete>
         <input matSliderThumb [(ngModel)]="selectedValue" name="slider" (input)="selectedValueChanged()">
     </mat-slider>
 </div>
-<div class="info" [innerHTML]="bortle.description">Bortle class {{ selectedValue }}</div>
+<div class="info full-width desktop" [innerHTML]="bortle.description">Bortle class {{ selectedValue }}</div>
+<div class="example full-width"><p>Example: {{ bortle.example }}</p></div>

@@ -10,8 +10,9 @@
         div.mobile {
             display: flex;
             flex-wrap: wrap;
+            flex-direction: column;
             gap: 10px;
-            justify-content: space-around;
+            align-items: center;
         }
     }
     
