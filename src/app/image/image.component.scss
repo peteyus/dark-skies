@@ -1,25 +1,32 @@
 :host {
     padding-top: 10px;
 
-    .mobile,
-    .desktop {
-        display: none
+    div.mobile {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    div.desktop {
+        display: flex;
+        gap: 16px;
+    }
+
+    .text-content {
+        max-width: 75%;
     }
 
     @media screen and (max-width: 899px) {
-        div.mobile {
-            display: flex;
-            flex-wrap: wrap;
-            flex-direction: column;
-            gap: 10px;
-            align-items: center;
+        div.desktop {
+            display: none;
         }
     }
-    
+
     @media screen and (min-width: 900px) {
-        div.desktop {
-            display: flex;
-            gap: 10px;
+        div.mobile {
+            display: none;
         }
     }
 }

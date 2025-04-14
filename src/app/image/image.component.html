@@ -10,13 +10,13 @@
 </div>
 
 <div class="desktop">
-    <div>
+    <div class="image">
         <img priority [ngSrc]="'assets/' + constellation + '-b' + selectedValue + (showLines ? '-lines' : '') + '.jpg'"
             width="245" height="352">
         <p class="small">Image Source: <a href="https://www.stellarium-labs.com/stellarium-mobile-plus/">Stellarium</a>
         </p>
     </div>
-    <div>
+    <div class="text-content">
         <mat-slide-toggle [(ngModel)]="showLines" name="showLines">Show Constellation Lines</mat-slide-toggle>
         <app-bortle (bortleChanged)="bortleChanged($event)"></app-bortle>
     </div>
