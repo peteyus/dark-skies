@@ -1,8 +1,9 @@
 :host {
-    width: 70%; 
     mat-tab-nav-panel {
         display: flex;
         justify-content: center;
         padding: 10px;
+        max-width: 1440px;
+        margin: 0 auto;
     }
 }
